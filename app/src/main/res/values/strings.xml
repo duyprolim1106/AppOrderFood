@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">AppOrderFood</string>
+    <string name="Menu">Menu</string>
+    <string name="Enjoy">Enjoy</string>
+    <string name="YourFood">Your Food</string>
+    <string name="GetStarted">Get Started</string>
+    <string name="Search">Search</string>
+    <string name="All">All</string>
+    <string name="Burger">Burger</string>
+    <string name="Pizza">Pizza</string>
+    <string name="Desert">Desert</string>
+    <string name="Promotions">Promotions</string>
+    <string name="TodayOffer">Today Offer</string>
+    <string name="FreeBoxOfNuggets">Free Box Of Nuggets</string>
+    <string name="OnAllOrderAbove">On all order above $150</string>
+    <string name="Popular">Popular</string>
+    <string name="BeefBurger">BeefBurger</string>
+    <string name="CheesePizza">CheesePizza</string>
+    <string name="s20">$20</string>
+    <string name="s48">4.8</string>
+    <string name="BigJuicyBurger">Big juicy burger with cheese lettuce</string>
+    <string name="TomatoOnion">tomato onions and special sauce</string>
+    <string name="AddOns">Add ons</string>
+    <string name="AddToCart">Add to cart</string>
+    <string name="ItemsInCart">Items in Cart</string>
+    <string name="Noodles">Noodles</string>
+    <string name="OrderInstructions">Order Instructions</string>
+    <string name="Totals">Totals:</string>
+    <string name="Checkout">Checkout</string>
+    <string name="BackToMenu">Back to Menu</string>
+    <string name="hello_world">Hello World</string>
 </resources>
