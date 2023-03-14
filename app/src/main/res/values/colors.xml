@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    color app-->
+    <color name="primary_color">#FF205CC0</color>
+    <color name="box_popular_color">#FF9CBBEE</color>
+    <color name="box_menu_color">#FFEFEEEE</color>
+    <color name="text_menu_color">#FF858585</color>
+    <color name="text_menu_active_color">#FF644AB5</color>
+    <color name="money_color">#FFC9A905</color>
 </resources>
