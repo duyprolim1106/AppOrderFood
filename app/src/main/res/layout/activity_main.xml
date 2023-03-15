@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="345dp"
         android:src="@drawable/group_food"
         android:scaleType="centerInside"/>
