@@ -24,7 +24,7 @@
             android:exported="false" />
         <activity
             android:name=".HomeFragmentActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
