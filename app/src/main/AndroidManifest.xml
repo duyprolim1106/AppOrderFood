@@ -26,6 +26,9 @@
             android:name=".HomeFragmentActivity"
             android:exported="false"/>
         <activity
+            android:name=".DetailFood"
+            android:exported="false"/>
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
