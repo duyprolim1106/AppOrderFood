@@ -44,7 +44,7 @@ public class DetailFood extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DetailFood.this, HomeFragmentActivity.class);
+                Intent intent = new Intent(DetailFood.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }
