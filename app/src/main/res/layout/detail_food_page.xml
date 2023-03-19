@@ -15,6 +15,7 @@
             android:orientation="vertical">
 
             <ImageButton
+                android:id="@+id/back"
                 android:layout_width="23dp"
                 android:layout_height="23dp"
                 android:scaleType="fitCenter"
@@ -28,7 +29,6 @@
                 android:layout_marginTop="@dimen/padding_medium_l"
                 android:id="@+id/image"
                 android:layout_gravity="center"
-                android:src="@drawable/beef_burger_big"
                 tools:ignore="MissingConstraints" />
 
         </LinearLayout>
@@ -69,20 +69,20 @@
                             android:layout_marginStart="10dp"/>
 
                         <TextView
+                            android:id="@+id/rateView"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
                             app:layout_constraintLeft_toRightOf="@+id/star"
-                            style="@style/RateText"
-                            android:text="@string/s48"/>
+                            style="@style/RateText"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
+                        android:id="@+id/moneyFood"
                         android:layout_width="110dp"
                         android:layout_height="55dp"
                         android:gravity="center"
-                        android:text="@string/s20"
                         style="@style/MoneyTextMedium"
                         app:layout_constraintRight_toRightOf="parent"/>
 
@@ -96,9 +96,9 @@
                     app:layout_constraintTop_toBottomOf="@+id/rateLayout">
 
                     <TextView
+                        android:id="@+id/foodName"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="@string/BeefBurger"
                         android:gravity="center"
                         style="@style/FoodNameDetailTextThin"
                         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -147,7 +147,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/foodOrderNumber"
-                    android:text="Big juicy burger with cheese lettuce tomato onions and special sauce"
                     style="@style/FoodDetailTextThin"
                     android:maxLines="2"
                     android:ellipsize="none"

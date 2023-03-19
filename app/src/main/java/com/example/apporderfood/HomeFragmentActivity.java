@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 
 public class HomeFragmentActivity extends AppCompatActivity {
 
-    ImageButton btnBurger;
+    ImageButton btnBurger, btnCheese;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +31,32 @@ public class HomeFragmentActivity extends AppCompatActivity {
 //        }
 
         btnBurger = findViewById(R.id.btnBurger);
+        btnCheese = findViewById(R.id.btnCheese);
         btnBurger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentValues(R.drawable.burger_all_big, getString(R.string.BeefBurger), getString(R.string.s20), "Big juicy burger with cheese lettuce tomato onions and special sauce");
+                IntentValues(R.drawable.beef_burger_biggest, getString(R.string.s48), getString(R.string.BeefBurger), getString(R.string.s20), getString(R.string.BigJuicyBurger));
+            }
+        });
+
+        btnCheese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentValues(R.drawable.pizza_big, getString(R.string.s45), getString(R.string.CheesePizza), getString(R.string.s32), getString(R.string.PizzaDist));
             }
         });
 
     }
 
-    public void IntentValues(int idImage, String title, String money, String detail) {
+    public void IntentValues(int idImage, String rate, String title, String money, String detail) {
         Intent intent = new Intent(this, DetailFood.class);
 
         intent.putExtra("image", idImage);
-        intent.putExtra("title", title);
+        intent.putExtra("rate", rate);
+        intent.putExtra("foodName", title);
         intent.putExtra("money", money);
-        intent.putExtra("detail", detail);
+        intent.putExtra("foodDetail", detail);
         startActivity(intent);
+        finish();
     }
 }
