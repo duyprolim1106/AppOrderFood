@@ -12,33 +12,44 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class HomeActivity extends AppCompatActivity {
 
-//    BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-//
-//        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-////            @SuppressLint("NonConstantResourceId")
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                Fragment selected_Fragment = null;
-//
-//                switch (item.getItemId()) {
-//                    case R.id.navigation_home:
-//                        selected_Fragment = new HomeFragment();
-//                        break;
-//                    case R.id.navigation_shopping_cart:
-//                        selected_Fragment = new ShoppingCartFragment();
-//                        break;
-//                }
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.frame_layout, selected_Fragment)
-//                        .commit();
-//                return false;
-//            }
-//        });
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame_layout, new HomeFragment())
+                .commit();
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selected_Fragment = new HomeFragment();
+
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        selected_Fragment = new HomeFragment();
+                        break;
+                    case R.id.navigation_shopping_cart:
+                        selected_Fragment = new ShoppingCartFragment();
+                        break;
+                    case R.id.navigation_search:
+                        selected_Fragment = new SearchFragment();
+                        break;
+                    case R.id.navigation_user:
+                        selected_Fragment = new UserFragment();
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_layout, selected_Fragment)
+                        .commit();
+                return false;
+            }
+        });
 
     }
 
