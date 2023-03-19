@@ -15,4 +15,7 @@
     <color name="text_menu_color">#FF858585</color>
     <color name="text_menu_active_color">#FF644AB5</color>
     <color name="money_color">#FFC9A905</color>
+    <color name="box_detail">#FFD4DEF0</color>
+    <color name="food_detail">#FF727272</color>
+    <color name="transparent80">#00FFFFFF</color>
 </resources>
