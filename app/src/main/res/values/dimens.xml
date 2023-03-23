@@ -16,4 +16,6 @@
     <dimen name="width_height_23dp">23dp</dimen>
     <dimen name="margin_20dp">20dp</dimen>
     <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="width_box_food_cart">320dp</dimen>
+    <dimen name="height_box_food_cart">150dp</dimen>
 </resources>

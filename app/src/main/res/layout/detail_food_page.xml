@@ -119,9 +119,10 @@
                             tools:ignore="MissingConstraints" />
 
                         <TextView
+                            android:id="@+id/txtQuantity"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="01"
+                            android:text="1"
                             android:gravity="center"
                             style="@style/PopularItemText"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -130,6 +131,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"/>
 
                         <ImageButton
+                            android:id="@+id/minus"
                             android:layout_width="24dp"
                             android:layout_height="wrap_content"
                             app:layout_constraintRight_toRightOf="parent"
@@ -236,7 +238,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Button
-                    android:id="@+id/btnStarted"
+                    android:id="@+id/btnAddToCart"
                     style="@style/TextOfButton"
                     android:layout_width="241dp"
                     android:layout_height="64dp"

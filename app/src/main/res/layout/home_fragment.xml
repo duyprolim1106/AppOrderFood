@@ -397,7 +397,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="@dimen/width_image_box_popular"
+                                android:layout_width="@dimen/width_box_popular"
                                 android:layout_height="@dimen/height_box_popular"
                                 android:layout_marginRight="@dimen/margin_20dp"
                                 android:orientation="vertical"
@@ -465,9 +465,9 @@
                                     android:id="@+id/btnCheeses"
                                     android:layout_width="@dimen/width_image_box_popular"
                                     android:layout_height="@dimen/height_image_box_popular"
-                                    android:src="@drawable/beef_burger_big"
+                                    android:src="@drawable/burger_all"
                                     android:background="@color/box_popular_color"
-                                    android:scaleType="centerCrop"/>
+                                    android:scaleType="centerInside"/>
 
                                 <TextView
                                     android:layout_width="wrap_content"
