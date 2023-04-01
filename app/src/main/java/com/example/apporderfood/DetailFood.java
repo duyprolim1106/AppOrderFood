@@ -13,6 +13,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.apporderfood.database.DatabaseHandler;
+
+import com.example.apporderfood.database.DatabaseHandler;
+import com.example.apporderfood.model.Food;
 
 public class DetailFood extends AppCompatActivity {
     private static final String TAG = "MyClass";
@@ -87,10 +91,10 @@ public class DetailFood extends AppCompatActivity {
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cart cart = new Cart(image, food_name, Integer.parseInt(money), Integer.parseInt(txtQuantity.getText().toString()));
+                Food food = new Food(image, Integer.parseInt(money.substring(1)), Integer.parseInt(txtQuantity.getText().toString()), food_name);
                 try {
                     DatabaseHandler db = new DatabaseHandler(context);
-                    db.addCart(cart);
+                    db.addFood(food);
                     db.close();
                 } catch (SQLiteException e) {
                     Log.e(TAG, "Error adding cart to database: " + e.getMessage());

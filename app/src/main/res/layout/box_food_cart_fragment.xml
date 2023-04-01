@@ -12,7 +12,7 @@
         android:background="@drawable/popular_border_radius_items">
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/imageCart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/beef_burger"/>
@@ -45,6 +45,7 @@
                     style="@style/FoodNameCart"/>
 
                 <TextView
+                    android:id="@+id/foodMoneyCart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/s20"
@@ -97,7 +98,7 @@
                     tools:ignore="MissingConstraints" />
 
                 <TextView
-                    android:id="@+id/txtQuantity"
+                    android:id="@+id/quantityCart"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="1"
