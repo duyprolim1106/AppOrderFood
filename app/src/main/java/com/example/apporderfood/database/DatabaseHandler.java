@@ -95,6 +95,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] { String.valueOf(food.getImage()) });
     }
 
+    public void updateFoodQuantity(Food food) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_FOOD_QUANTITY, food.getQuantity());
+        db.update(TABLE_FOOD, values, KEY_FOOD_IMAGE + "=?", new String[]{String.valueOf(food.getImage())});
+        db.close();
+    }
+
+
     // Delete a food from the database
     public void deleteFood(Food food) {
         SQLiteDatabase db = this.getWritableDatabase();
