@@ -54,7 +54,7 @@
                     android:id="@+id/imageView4"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/avt"
+                    android:src="@drawable/avatar"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="parent"/>
@@ -120,7 +120,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
-                android:id="@+id/btnAddToCart"
+                android:id="@+id/btnCheckout"
                 android:layout_marginTop="@dimen/padding_large"
                 style="@style/TextOfButton"
                 android:layout_width="279dp"

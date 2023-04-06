@@ -145,6 +145,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return exists;
     }
 
+    public void clearAllFoodData() {
+        SQLiteDatabase db = getWritableDatabase(); // Replace with your own database reference
+
+        // Delete all rows from the "Food" table
+        int rowsDeleted = db.delete(TABLE_FOOD, null, null);
+
+        if (rowsDeleted > 0) {
+            // Data cleared successfully, do something
+        } else {
+            // Failed to clear data, do something else
+        }
+
+        db.close();
+    }
+
+
     // Add a new user to the database
     public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
