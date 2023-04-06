@@ -94,10 +94,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (edtUsername.getError() == null && edtPass.getError() == null) {
                     if (db.checkUser(edtUsername.getText().toString(), edtPass.getText().toString())) {
                         String data = edtUsername.getText().toString();
-                        UserFragment fragmentA = (UserFragment)getSupportFragmentManager().findFragmentById(R.id.frame_layout);
-                        fragmentA.setStringData(data);
-
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        intent.putExtra("userName", data);
                         startActivity(intent);
                     } else {
                         Toast.makeText(context, "Wrong username or password", Toast.LENGTH_SHORT).show();

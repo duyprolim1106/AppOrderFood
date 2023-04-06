@@ -103,7 +103,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-
     // Delete a food from the database
     public void deleteFood(Food food) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -131,6 +130,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return foodList;
     }
 
+    public boolean checkIdExists(Food food) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = {KEY_FOOD_IMAGE}; // Replace with the actual column names of your table
+        String selection = KEY_FOOD_IMAGE + " = ?"; // Replace with the actual column name for ID
+        String[] selectionArgs = {String.valueOf(food.getImage())}; // Replace with the actual value of the ID to check
+        String limit = "1"; // Limit the result to 1 row since we're only checking for existence
+
+        Cursor cursor = db.query(TABLE_FOOD, columns, selection, selectionArgs, null, null, null, limit);
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+
+        return exists;
+    }
 
     // Add a new user to the database
     public void addUser(User user) {

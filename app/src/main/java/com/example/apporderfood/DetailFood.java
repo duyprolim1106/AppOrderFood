@@ -1,15 +1,18 @@
 package com.example.apporderfood;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -94,8 +97,31 @@ public class DetailFood extends AppCompatActivity {
                 Food food = new Food(image, Integer.parseInt(money.substring(1)), Integer.parseInt(txtQuantity.getText().toString()), food_name);
                 try {
                     DatabaseHandler db = new DatabaseHandler(context);
-                    db.addFood(food);
-                    db.close();
+                    if (!db.checkIdExists(food)) {
+                        db.addFood(food);
+                        db.close();
+                        Toast.makeText(context, "Already in the cart", Toast.LENGTH_SHORT).show();
+
+                        // Delay for 2 seconds and then dismiss the Toast
+                        new Handler().postDelayed(new Runnable() {
+                            @SuppressLint("ShowToast")
+                            @Override
+                            public void run() {
+                                Toast.makeText(DetailFood.this, "", Toast.LENGTH_SHORT).cancel();
+                            }
+                        }, 2000);
+                    } else {
+                        Toast.makeText(context, "The food is already in the cart", Toast.LENGTH_SHORT).show();
+
+                        // Delay for 2 seconds and then dismiss the Toast
+                        new Handler().postDelayed(new Runnable() {
+                            @SuppressLint("ShowToast")
+                            @Override
+                            public void run() {
+                                Toast.makeText(DetailFood.this, "", Toast.LENGTH_SHORT).cancel();
+                            }
+                        }, 2000);
+                    }
                 } catch (SQLiteException e) {
                     Log.e(TAG, "Error adding cart to database: " + e.getMessage());
                 }

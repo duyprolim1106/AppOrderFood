@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -18,6 +19,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+
+        Intent i = getIntent();
+        String data = i.getStringExtra("userName");
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction()
@@ -42,6 +46,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.navigation_user:
                         selected_Fragment = new UserFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("userName", data);
+                        selected_Fragment.setArguments(bundle);
                         break;
                 }
                 getSupportFragmentManager().beginTransaction()
