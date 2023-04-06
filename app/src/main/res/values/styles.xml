@@ -126,4 +126,34 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="noodle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">#B3191919</item>
+    </style>
+
+    <style name="sort_by">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">#191919</item>
+    </style>
+
+    <style name="related">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="nearest">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">#99191919</item>
+    </style>
+
+    <style name="bestsellers">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">#99191919</item>
+    </style>
+
 </resources>

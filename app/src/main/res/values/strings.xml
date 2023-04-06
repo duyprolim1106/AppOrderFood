@@ -42,4 +42,19 @@
     <string name="TermsAndPrivacy">Terms and Conditions | Privacy Policy</string>
     <string name="NewUserGetStartedNow">New User? Get Started Now</string>
     <string name="Next">Next</string>
+    <string name="MyLobaceAccount">MY LOBACE ACCOUNT</string>
+    <string name="Account">Account</string>
+    <string name="Orders">Orders</string>
+    <string name="RatingsReviews"><![CDATA[Ratings & Reviews]]></string>
+    <string name="AddressBook">Address Book</string>
+    <string name="PaymentMethod">Payment Method</string>
+    <string name="Settings">Settings</string>
+    <string name="MySettings">MY SETTINGS</string>
+    <string name="ChangePassword">Change Password</string>
+    <string name="Logout">Logout</string>
+    <string name="noodle">Noodle</string>
+    <string name="sort_by">Sort by</string>
+    <string name="related">Related</string>
+    <string name="nearest">Nearest</string>
+    <string name="bestsellers">Bestsellers</string>
 </resources>
