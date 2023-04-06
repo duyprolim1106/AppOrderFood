@@ -155,14 +155,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Update an existing user in the database
-    public int updateUser(User user) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    // Update an password user in the database
+    public void updatePasswordByUsername(String username, String newPassword) {
+        SQLiteDatabase db = getWritableDatabase(); // Replace with your own database reference
         ContentValues values = new ContentValues();
-        values.put(KEY_USER_USERNAME, user.getUsername());
-        values.put(KEY_USER_PASSWORD, user.getPassword());
-        return db.update(TABLE_USER, values, KEY_USER_ID + " = ?", new String[] { String.valueOf(user.getId()) });
+        values.put(KEY_USER_PASSWORD, newPassword); // Replace "password" with the actual column name for password in your User table
+
+        // Update the User table with the new password based on the username
+        int rowsAffected = db.update(TABLE_USER, values, KEY_USER_USERNAME + " = ?", new String[]{username});
+
+        if (rowsAffected > 0) {
+            // Update successful, do something
+        } else {
+            // Update failed, do something else
+        }
+
+        db.close();
     }
+
 
     // Delete a user from the database
     public void deleteUser(User user) {
@@ -177,6 +187,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String[] columns = { KEY_USER_ID };
         String selection = KEY_USER_USERNAME + " = ?" + " AND " + KEY_USER_PASSWORD + " = ?";
         String[] selectionArgs = { username, password };
+
+        Cursor cursor = db.query(TABLE_USER, columns, selection, selectionArgs, null, null, null);
+
+        int count = cursor.getCount();
+
+        cursor.close();
+        db.close();
+
+        return count > 0;
+    }
+
+    public boolean checkUsername(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = { KEY_USER_ID };
+        String selection = KEY_USER_USERNAME + " = ?";
+        String[] selectionArgs = { username };
 
         Cursor cursor = db.query(TABLE_USER, columns, selection, selectionArgs, null, null, null);
 

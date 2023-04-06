@@ -26,6 +26,12 @@
             android:name=".SignupActivity"
             android:exported="false" />
         <activity
+            android:name=".InputUserForgotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InputPassForgotActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

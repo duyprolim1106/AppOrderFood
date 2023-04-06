@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,13 +23,11 @@ import com.example.apporderfood.model.User;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername, edtPass;
-
     private Context context;
-
     boolean isPasswordVisible = false;
-
     ImageButton hidePass;
     Button btnSignin, btnSignup;
+    TextView txtForgotPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         btnSignin = findViewById(R.id.btnSignIn);
         btnSignup = findViewById(R.id.btnSignup);
         hidePass = findViewById(R.id.hidePass);
+
+        txtForgotPass = findViewById(R.id.txtForgotPass);
 
         hidePass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +122,15 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }, 2000);
                 }
+            }
+        });
+
+        txtForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, InputUserForgotActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

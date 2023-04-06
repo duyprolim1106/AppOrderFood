@@ -30,6 +30,7 @@
     <string name="Totals">Totals:</string>
     <string name="Checkout">Checkout</string>
     <string name="BackToMenu">Back to Menu</string>
+    <string name="Back">Back</string>
     <string name="hello_world">Hello World</string>
     <string name="SignUp">Sign Up</string>
     <string name="SignIn">Sign In</string>
@@ -40,4 +41,5 @@
     <string name="ForgotPass">Forgot Password?</string>
     <string name="TermsAndPrivacy">Terms and Conditions | Privacy Policy</string>
     <string name="NewUserGetStartedNow">New User? Get Started Now</string>
+    <string name="Next">Next</string>
 </resources>
