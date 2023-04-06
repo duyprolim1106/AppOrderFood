@@ -25,6 +25,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
     List<Food> foodList;
     String TAG = "";
     private TextView totalMoney;
+    private TextView numberFoodInCart;
     int total;
     int pos = -1; //tạo biến lấy vị trí
 
@@ -35,9 +36,10 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
     }
 
 
-    public FoodAdapter(List<Food> foodList, TextView total) {
+    public FoodAdapter(List<Food> foodList, TextView total, TextView numberFoodInCart) {
         this.foodList = foodList;
         this.totalMoney = total;
+        this.numberFoodInCart = numberFoodInCart;
     }
 
     @NonNull
@@ -88,6 +90,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder>{
                 if (listener != null) {
                     listener.onItemClick(position);
                 }
+                foodList.remove(position);
+                numberFoodInCart.setText(String.valueOf(foodList.size()));
+                total = 0;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    foodList.forEach(t -> total += t.getMoney()*t.getQuantity());
+                }
+                totalMoney.setText("$" + total);
             }
         });
     }
