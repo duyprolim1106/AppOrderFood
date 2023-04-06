@@ -57,7 +57,7 @@ public class ShoppingCartFragment extends Fragment implements FoodAdapter.OnItem
                 foodList.forEach(v -> total += v.getMoney()*v.getQuantity());
             }
             totalMoney.setText("$" + total);
-            FoodAdapter adapter = new FoodAdapter(foodList, totalMoney);
+            FoodAdapter adapter = new FoodAdapter(foodList, totalMoney, numberFoodInCart);
             recyclerView = view.findViewById(R.id.recycler_view);
             LinearLayoutManager manager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(manager);
